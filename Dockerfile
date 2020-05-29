@@ -1,4 +1,5 @@
 #FROM alpine:3.11
+#FROM browserless/chrome
 FROM zenika/alpine-chrome:81-with-puppeteer
 
 USER root
