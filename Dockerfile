@@ -124,12 +124,12 @@ RUN echo "Open font NotoSansMono" \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
 
-#RUN echo "Non-free fonts" \
-#&&  apk add --no-cache \
-#        msttcorefonts-installer \
-#        fontconfig \
-#&&  update-ms-fonts \
-#&&  fc-cache -f
+RUN echo "Non-free fonts" \
+&&  apk add --no-cache \
+        msttcorefonts-installer \
+        fontconfig \
+&&  update-ms-fonts \
+&&  fc-cache -f
 
 #RUN echo "Google fonts" \
 #&&  wget https://github.com/google/fonts/archive/master.tar.gz -O gf.tar.gz \
