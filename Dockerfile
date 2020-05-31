@@ -24,7 +24,7 @@ RUN echo "Open font NotoSans" \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-hinted.zip \
 &&  mkdir -p /usr/share/fonts/opentype/NotoSans \
 &&  unzip NotoSans-hinted.zip -d /usr/share/fonts/opentype/NotoSans/ \
-&&  chomod o+r -R /usr/share/fonts/opentype/NotoSans/ \
+&&  chmod o+r -R /usr/share/fonts/opentype/NotoSans/ \
 &&  rm NotoSans-hinted.zip \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
@@ -35,7 +35,7 @@ RUN echo "Open font NotoSerif" \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSerif-hinted.zip \
 &&  mkdir -p /usr/share/fonts/opentype/NotoSerif \
 &&  unzip NotoSerif-hinted.zip -d /usr/share/fonts/opentype/NotoSerif/ \
-&&  chomod o+r -R /usr/share/fonts/opentype/NotoSerif/ \
+&&  chmod o+r -R /usr/share/fonts/opentype/NotoSerif/ \
 &&  rm NotoSerif-hinted.zip \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
@@ -46,7 +46,7 @@ RUN echo "Open font NotoSansDisplay" \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSansDisplay-hinted.zip \
 &&  mkdir -p /usr/share/fonts/opentype/NotoSansDisplay \
 &&  unzip NotoSansDisplay-hinted.zip -d /usr/share/fonts/opentype/NotoSansDisplay/ \
-&&  chomod o+r -R /usr/share/fonts/opentype/NotoSansDisplay/ \
+&&  chmod o+r -R /usr/share/fonts/opentype/NotoSansDisplay/ \
 &&  rm NotoSansDisplay-hinted.zip \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
@@ -57,7 +57,7 @@ RUN echo "Open font NotoSerifDisplay" \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifDisplay-hinted.zip \
 &&  mkdir -p /usr/share/fonts/opentype/NotoSerifDisplay \
 &&  unzip NotoSerifDisplay-hinted.zip -d /usr/share/fonts/opentype/NotoSerifDisplay/ \
-&&  chomod o+r -R /usr/share/fonts/opentype/NotoSerifDisplay/ \
+&&  chmod o+r -R /usr/share/fonts/opentype/NotoSerifDisplay/ \
 &&  rm NotoSerifDisplay-hinted.zip \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
@@ -68,7 +68,7 @@ RUN echo "Open font NotoMono" \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoMono-hinted.zip \
 &&  mkdir -p /usr/share/fonts/opentype/NotoMono \
 &&  unzip NotoMono-hinted.zip -d /usr/share/fonts/opentype/NotoMono/ \
-&&  chomod o+r -R /usr/share/fonts/opentype/NotoMono/ \
+&&  chmod o+r -R /usr/share/fonts/opentype/NotoMono/ \
 &&  rm NotoMono-hinted.zip \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
@@ -79,7 +79,7 @@ RUN echo "Open font NotoSansMono" \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSansMono-hinted.zip \
 &&  mkdir -p /usr/share/fonts/opentype/NotoSansMono \
 &&  unzip NotoSansMono-hinted.zip -d /usr/share/fonts/opentype/NotoSansMono/ \
-&&  chomod o+r -R /usr/share/fonts/opentype/NotoSansMono/ \
+&&  chmod o+r -R /usr/share/fonts/opentype/NotoSansMono/ \
 &&  rm NotoSansMono-hinted.zip \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
