@@ -4,11 +4,11 @@ FROM zenika/alpine-chrome:81-with-puppeteer
 
 USER root
 
-#RUN echo "Free fonts" \
-#&&  apk add --no-cache \
-#        ttf-freefont
+RUN echo "GNU fonts 'FreeSans', 'FreeSerif', 'FreeMono' (Latin Extended)" \
+&&  apk add --no-cache \
+        ttf-freefont
 
-#RUN echo "Open fonts" \
+#RUN echo "Open fonts (Latin)" \
 #&&  apk add --no-cache \
 #        font-noto \
 #        terminus-font \
@@ -18,7 +18,7 @@ USER root
 #        font-misc-misc \
 #&&  fc-cache -f
 
-RUN echo "Open font NotoSans" \
+RUN echo "Open font 'Noto Sans' (Latin Extended)" \
 &&  apk add --no-cache --virtual .build-deps \
         curl \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-hinted.zip \
@@ -29,7 +29,7 @@ RUN echo "Open font NotoSans" \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
 
-RUN echo "Open font NotoSerif" \
+RUN echo "Open font 'Noto Serif' (Latin Extended)" \
 &&  apk add --no-cache --virtual .build-deps \
         curl \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSerif-hinted.zip \
@@ -40,7 +40,7 @@ RUN echo "Open font NotoSerif" \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
 
-RUN echo "Open font NotoSansDisplay" \
+RUN echo "Open font 'Noto Sans Display' (Latin Extended)" \
 &&  apk add --no-cache --virtual .build-deps \
         curl \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSansDisplay-hinted.zip \
@@ -51,7 +51,7 @@ RUN echo "Open font NotoSansDisplay" \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
 
-RUN echo "Open font NotoSerifDisplay" \
+RUN echo "Open font 'Noto Serif Display' (Latin Extended)" \
 &&  apk add --no-cache --virtual .build-deps \
         curl \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifDisplay-hinted.zip \
@@ -62,7 +62,7 @@ RUN echo "Open font NotoSerifDisplay" \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
 
-RUN echo "Open font NotoMono" \
+RUN echo "Open font 'Noto Mono' (Latin Extended)" \
 &&  apk add --no-cache --virtual .build-deps \
         curl \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoMono-hinted.zip \
@@ -73,7 +73,7 @@ RUN echo "Open font NotoMono" \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
 
-RUN echo "Open font NotoSansMono" \
+RUN echo "Open font 'Noto Sans Mono' (Latin Extended)" \
 &&  apk add --no-cache --virtual .build-deps \
         curl \
 &&  curl -O https://noto-website-2.storage.googleapis.com/pkgs/NotoSansMono-hinted.zip \
@@ -84,14 +84,7 @@ RUN echo "Open font NotoSansMono" \
 &&  fc-cache -f \
 &&  apk del --purge .build-deps
 
-RUN echo "Non-free fonts" \
-&&  apk add --no-cache \
-        msttcorefonts-installer \
-        fontconfig \
-&&  update-ms-fonts \
-&&  fc-cache -f
-
-#RUN echo "Google fonts" \
+#RUN echo "Open Google fonts (free to use - https://developers.google.com/fonts)" \
 #&&  wget https://github.com/google/fonts/archive/master.tar.gz -O gf.tar.gz \
 #&&  tar -xf gf.tar.gz \
 #&&  mkdir -p /usr/share/fonts/truetype/google-fonts \
@@ -99,5 +92,15 @@ RUN echo "Non-free fonts" \
 #&&  rm -f gf.tar.gz \
 #&&  fc-cache -f \
 #&&  rm -rf /var/cache/*
+
+## Open Google fonts: 'Inconsolata', 'Fira Code' (monospace)
+## Free font: 'mononoki' (monospace)
+
+#RUN echo "Commercial fonts (not recommended for commercial or open source projects)" \
+#&&  apk add --no-cache \
+#        msttcorefonts-installer \
+#        fontconfig \
+#&&  update-ms-fonts \
+#&&  fc-cache -f
 
 USER chrome
